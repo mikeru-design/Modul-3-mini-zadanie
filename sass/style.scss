@@ -256,16 +256,16 @@ body{
             text-transform: uppercase;
             font-family: 'Montserrat';
             font-weight: 100;
+            font-size: 14px;
             color: $main-white-color;
             letter-spacing: 2px;
             border-radius: 5px;
 
             transition: .3s;
 
-            // &:hover {
-            //     background-color: $mian-color;
-            //     color: $main-dark-color;
-            // }
+            &:hover {
+                color: $mian-color;
+            }
         }
         
     }
@@ -275,7 +275,6 @@ body{
 
 header{
     height: 100vh;
-    background-color: $main-dark-color;
 }
 
 // ---------------------------------------HEADER---------------------------------
@@ -358,7 +357,7 @@ footer{
     .navigation{
 
         .nav-list{
-            width: 50%;
+            width: 60%;
         }
     }
 }
@@ -366,5 +365,12 @@ footer{
 @media (1400px <= width){
     .main-container{
         max-width: 1320px;
+    }
+
+    .navigation{
+
+        .nav-list{
+            width: 50%;
+        }
     }
 }
