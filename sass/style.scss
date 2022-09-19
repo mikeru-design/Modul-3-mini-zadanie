@@ -46,8 +46,8 @@ body{
     position: relative;
     
     font-family: 'Cormorant Garamond', serif;
-    font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto Slab', serif;
+    font-family: 'Montserrat', sans-serif;
     
     scroll-behavior: smooth;
 
@@ -61,9 +61,7 @@ body{
     flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
-    padding: 100px 6vw 120px;
-
-    background-color: $mian-color;
+    padding: 0 5vw 0;
 }
 
 .section-title{
@@ -96,32 +94,30 @@ body{
 }
 
 .btn-main{
-    display: inline-block;
+    @include flex-center();
     position: relative;
     width: 200px;
-    height: 50px;
+    height: 55px;
     margin: 0 auto;
     
-    background: none;
-    border: 2px solid white;
-    border-radius: 50px;
+    background-color: $mian-color;
+    border-radius: 5px;
     
     overflow: hidden;
     transition: .5s;
     cursor: pointer;
     
     p{
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        
+        font-family: 'Montserrat';
         color: white;
         font-weight: 900;
+        font-size: 16px;
+        text-transform: uppercase;
         
-        transform: translate(-50%, -50%);
         transform-origin: center;
         transition: .3s;
+
+        z-index: 5;
     }
     
     &::before{
@@ -136,7 +132,7 @@ body{
     }
     
     &:hover p{
-        color: $mian-color;
+        color: $main-light-color;
     }
 }
 
@@ -274,7 +270,41 @@ body{
 // ---------------------------------------HEADER---------------------------------
 
 header{
+    @include flex-center();
+
     height: 100vh;
+    width: 100%;
+
+    background-image: url(/images/main-BG-image.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .main-container{
+
+        .content-wrapper{
+            @include flex-center();
+            flex-direction: column;
+
+            h2{
+                margin-bottom: 50px;
+                font-size: 20px;
+                font-family: 'Cormorant Garamond';
+                color: $main-white-color;
+                text-align: center;
+                font-style: italic;
+            }
+            
+            h1{
+                margin-bottom: 60px;
+                font-size: 35px;
+                color: $main-white-color;
+                text-transform: uppercase;
+                text-align: center;
+
+            }
+        }
+    }
 }
 
 // ---------------------------------------HEADER---------------------------------
@@ -311,6 +341,37 @@ footer{
     .main-container{
         max-width: 720px;
     }
+
+    .btn-main{
+        width: 240px;
+        height: 65px;
+        p{
+            font-size: 18px;
+        }
+        &::before{
+        }
+        &:hover::before{
+            
+        }
+        &:hover p{
+        }
+    }
+
+    header{
+        .main-container{
+    
+            .content-wrapper{
+    
+                h2{
+                    font-size: 40px;
+                }
+                
+                h1{
+                    font-size: 75px;
+                }
+            }
+        }
+    }
 }
 
 @media (992px <= width){
@@ -324,7 +385,7 @@ footer{
         justify-content: space-between;
         background-color: transparent;
         
-        padding: 0 5vw;
+        padding: 40px 5vw 0;
         
         .nav-btn{
             display: none;
