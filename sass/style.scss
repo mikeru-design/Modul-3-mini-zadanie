@@ -57,15 +57,36 @@ body{
 }
 
 section{
-    padding: 120px 0;
+    padding: 120px 0 0;
 }
 
 .main-container{
     @include flex-center();
     flex-wrap: wrap;
+    justify-content: space-around;
     width: 100%;
     margin: 0 auto;
     padding: 0 5vw 0;
+}
+
+.content-wrapper{
+    @include flex-center();
+    flex-direction: column;
+    margin-bottom: 75px;
+    
+    text-align: center;
+    
+    .content-text{
+        .content-title{
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+        
+        p{
+            font-family: 'Roboto Slab';
+            color: $main-light-color;
+        }
+    }
 }
 
 .section-title{
@@ -332,15 +353,10 @@ header{
 // ---------------------------------------SERVICES---------------------------------
 
 #services{
-
+    
     .main-container{
 
         .content-wrapper{
-            @include flex-center();
-            flex-direction: column;
-            margin-bottom: 75px;
-            
-            text-align: center;
             
             .content-img{
                 @include flex-center();
@@ -366,18 +382,6 @@ header{
                 }
             }
             
-            .content-text{
-                h4{
-                    margin-bottom: 15px;
-                    font-weight: 900;
-                }
-                
-                p{
-                    font-family: 'Roboto Slab';
-                    color: $main-light-color;
-                }
-            }
-            
             &:hover {
                 .content-img{
                     border: 5px solid $mian-color;
@@ -395,9 +399,75 @@ header{
     }
 }
 
-footer{
-    height: 100vh;
+// ---------------------------------------PORTFOLIO---------------------------------
+
+#portfolio{
     background-color: $main-lighter-color;
+
+    .main-container{
+
+        .content-wrapper{
+            width: 350px;
+            background-color: $main-white-color;
+
+            transition: transform .5s, box-shadow .5s;
+            cursor: pointer;
+            
+            .content-img{
+                @include flex-center();
+                position: relative;
+                width: 100%;
+                height: 350px;
+                overflow: hidden;
+
+                text-align: center;
+
+                img{
+                    position: absolute;
+                    height: auto;
+                    width: 350px;
+                    // bottom: 0;
+                    // left: 0;
+
+                    transform: scale(1.02);
+                    transform-origin: center;
+                    transition: transform .5s;
+                }
+            }
+
+            .content-text{
+                padding: 30px 0;
+
+                .content-title{
+                    margin-bottom: 0;
+                }
+
+                p{
+                    font-family: 'Cormorant Garamond';
+                    font-style: italic;
+                    font-weight: bold;
+                }
+            }
+            
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 15px $main-light-color;
+
+                .content-img{
+                    img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------------------------------FOOTER---------------------------------
+
+footer{
+    padding: 50px 0;
+    background-color: $main-white-color;
 }
 
 // ---------------------------------------MEDIA---------------------------------
@@ -476,6 +546,7 @@ footer{
 
     .main-container{
         max-width: 960px;
+        padding: 0;
     }
 
     .navigation{
@@ -532,6 +603,30 @@ footer{
             width: 60%;
         }
     }
+
+    #portfolio{
+        background-color: $main-lighter-color;
+    
+        .main-container{
+    
+            .content-wrapper{
+                // width: 30%;
+
+                .content-img{
+                }
+    
+                .content-text{
+    
+                    .content-title{
+                    }
+    
+                    p{
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 @media (1400px <= width){
