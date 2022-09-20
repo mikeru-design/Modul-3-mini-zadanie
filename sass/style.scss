@@ -468,6 +468,32 @@ header{
 footer{
     padding: 50px 0;
     background-color: $main-white-color;
+
+    .main-container{
+
+        .social-media{
+            @include flex-center();
+
+            .social-icon{
+                @include flex-center();
+                width: 40px;
+                height: 40px;
+                margin-right: 20px;
+
+                background-color: $main-dark-color;
+                border-radius: 50%;
+                transition: .3s;
+
+                &:hover{
+                    transform: scale(1.1);
+
+                    &.social-icon{
+                        background-color: $mian-color;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // ---------------------------------------MEDIA---------------------------------
