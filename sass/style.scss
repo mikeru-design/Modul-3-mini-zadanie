@@ -86,10 +86,10 @@ section{
         font-weight: 900;
         text-transform: uppercase;
         
-        // &::before{
-        //     @include pseudo(20%, 2px, auto, 50%, -40px, auto, $mian-color);
-        //     transform: translateX(50%);
-        // }
+        &::before{
+            @include pseudo(20%, 2px, auto, 50%, -10px, auto, $mian-color);
+            transform: translateX(50%);
+        }
     }
     
     p{
@@ -175,6 +175,18 @@ section{
 &:hover p{
     color: white;
 }
+}
+
+.underline-animation{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    &::before{
+        @include pseudo(20%, 2px, auto, 50%, -10px, auto, $mian-color);
+        transform: translateX(50%) scale(0);
+        transition: .5s;
+    }
 }
 
 // ---------------------------------------NAVIGATION---------------------------------
@@ -366,12 +378,17 @@ header{
                 }
             }
             
-            &:hover .content-img{
-                border: 3px solid $main-light-color;
-                transform: rotateY(360deg);
+            &:hover {
+                .content-img{
+                    border: 5px solid $mian-color;
+                    transform: rotateY(360deg);
+                }
 
-                svg{
-                    fill: $main-light-color;
+                .underline-animation{
+                    &::before{
+                        transform: translateX(50%) scale(1);
+                        transform-origin: center;
+                    }
                 }
             }
         }
@@ -467,6 +484,18 @@ footer{
         background-color: transparent;
         
         padding: 40px 5vw 0;
+
+        &::before{
+            @include pseudo(100%, 100%, 0, auto, auto, 0, $main-dark-color);
+            transform: translateY(-100%);
+            transition: .3s;
+        }
+        
+        &:hover{
+            &::before{
+                transform: translateY(0);
+            }
+        }
         
         .nav-btn{
             display: none;
@@ -492,6 +521,7 @@ footer{
 }
 
 @media (1200px <= width){
+
     .main-container{
         max-width: 1140px;
     }
