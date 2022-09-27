@@ -1,11 +1,12 @@
 // ---------------------------------------VARIABLES---------------------------------
 
 @font-face {
-    font-family: 'Wisdom Script Regular';
-    font-style: normal;
+    font-family: 'wisdom_scriptregular';
+    src: url('/Fonts/wisdom-script-cufonfonts/webfontkit-20220927-091929/wisdom-script-aj-webfont.woff2') format('woff2'),
+         url('/Fonts/wisdom-script-cufonfonts/webfontkit-20220927-091929/wisdom-script-aj-webfont.woff') format('woff');
     font-weight: normal;
-    src: url(../Fonts/wisdom-script-cufonfonts/Wisdom\ Script\ AJ.otf);
-    }
+    font-style: normal;
+}
 
 $mian-color: (#fed136);
 $main-dark-color: (#222222);
@@ -45,6 +46,8 @@ $nav-height: 60px;
 body{
     position: relative;
     
+    
+    font-family: 'wisdom_scriptregular';
     font-family: 'Cormorant Garamond', serif;
     font-family: 'Roboto Slab', serif;
     font-family: 'Montserrat', sans-serif;
@@ -237,7 +240,7 @@ section{
         background-color: $main-dark-color;
 
         p{
-                font-family: 'Wisdom Script Regular';
+                font-family: 'wisdom_scriptregular';
                 font-size: 36px;
                 color: $mian-color;
                 line-height: calc($nav-height - 10px);
